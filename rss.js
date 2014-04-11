@@ -15,21 +15,24 @@
       this.items = [];
     }
   }
+  
+  function FeedItem( item ) {
+    this.title = fetchAttr( item, ‘title’ );
+    this.link = fetchAttr( item, ‘link’ );
+    this.description = fetchAttr( item, ‘description’ );
+  }
 
   function parse( xml ) {
     var count, item,
       parser = new DOMParser(),
-      items = parser.parseFromString( xml, 'application/xml' ).getElementsByTagName( 'item' );
+      DOMitems = parser.parseFromString( xml, 'application/xml' ).getElementsByTagName( 'item' );
 
     this.items = [];
+    
+    for (count = 0; count < DOMitems.length; count++ ) {
+         this.items[count] = new FeedItem( items[count] );
+    }
 
-    for ( count = 0; count < items.length; count++ ) {
-      item = {};
-      item.title = fetchAttr( items[count], 'title' );
-      item.link = fetchAttr( items[count], 'link' );
-      item.description = fetchAttr( items[count], 'description' );
-      this.items[this.items.length] = item;
-    }    
   }
 
   function stringify() {
