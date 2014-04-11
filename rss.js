@@ -17,9 +17,9 @@
   }
   
   function FeedItem( item ) {
-    this.title = fetchAttr( item, ‘title’ );
-    this.link = fetchAttr( item, ‘link’ );
-    this.description = fetchAttr( item, ‘description’ );
+    this.title = fetchAttr( item, 'title' );
+    this.link = fetchAttr( item, 'link' );
+    this.description = fetchAttr( item, 'description' );
   }
 
   function parse( xml ) {
@@ -29,7 +29,7 @@
 
     this.items = [];
     
-    for (count = 0; count < DOMitems.length; count++ ) {
+    for ( count = 0; count < DOMitems.length; count++ ) {
          this.items[count] = new FeedItem( items[count] );
     }
 
