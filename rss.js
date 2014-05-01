@@ -30,7 +30,7 @@
     this.items = [];
     
     for ( count = 0; count < DOMitems.length; count++ ) {
-         this.items[count] = new FeedItem( items[count] );
+         this.items[count] = new FeedItem( DOMitems[count] );
     }
 
   }
