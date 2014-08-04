@@ -30,18 +30,20 @@
     this.items = [];
     
     for ( count = 0; count < DOMitems.length; count++ ) {
-         this.items[count] = new FeedItem( DOMitems[count] );
+      this.items[count] = new FeedItem( DOMitems[count] );
     }
 
   }
 
   function stringify() {
-
+    return JSON.stringify({
+      items: this.items
+    });
   }
 
   window.Feed = Feed;
 
   Feed.prototype.parse = parse;
-  //Feed.prototype.stringify = stringify;
+  Feed.prototype.stringify = stringify;
 
 })();
