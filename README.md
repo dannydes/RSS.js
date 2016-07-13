@@ -29,7 +29,7 @@ var feedInfo = new Feed( '<?xml version="1.0" encoding="UTF-8" ?> <rss version="
 	1800</ttl> <item> <title>Example entry</title> <description>Here is some text containing an interesting description.\
 	</description> <link>http://www.wikipedia.org/</link> <guid>unique string per item</guid> <pubDate>Mon, 06 Sep 2009\
 	 16:20:00 +0000 </pubDate> </item> </channel> </rss>' );
-console.log( feed.items[0].title );
+console.log( feedInfo.items[0].title );
 ```
 
 Sample RSS taken from Wikipedia
